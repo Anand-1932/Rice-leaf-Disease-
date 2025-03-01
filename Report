@@ -1,1 +1,71 @@
+# BUSINESS CASE
+- In the dynamic field of agriculture, managing issues like crop illnesses is critical to maintaining food security. The emergence of several leaf diseases is a common problem that impacts rice crops globally and can have a substantial effect on production.    
 
+- Using state-of-the-art technology to counter this problem, a viable option is the use of Convolutional Neural Networks (CNN) for rice leaf disease prediction. By utilizing CNN, we provide farmers with an advanced instrument that examines photos of rice leaves and identifies minute patterns suggestive of illnesses.     
+
+- By facilitating prompt intervention and supporting early diagnosis, this revolutionary technology empowers farmers to take proactive steps to stop the spread of illness and improve crop health.     
+
+- Preventing disease can result in a large decrease in crop losses, possibly saving up to 30% of annual yields with a proactive approach to disease management.      
+
+- In addition to safeguarding the availability of rice, this also involves ensuring food security for the communities that depend on these crops. By utilizing predictive technologies, we are ensuring agriculture has a sustainable future in addition to embracing innovation.      
+
+- Essentially, this business case is about more than just making a profit; it's about building resilience in our food systems and giving farmers the resources they need to prosper in an uncertain climate.     
+
+- Additionally, from a societal standpoint, by guaranteeing a steady and reliable supply of rice, the use of CNN for rice leaf disease prediction promotes global food security. We strengthen the resilience of agricultural systems and lower the risk of food shortages and price volatility by proactively addressing crop diseases.     
+
+
+# DOMAIN ANALYSIS
+- In this project we are motivated to handle the data to detect three imports issues to tackle the health of the rice leaves.
+    - (i) Leaf smut
+    - (ii) Brown spot
+    - (iii) Bacterial leaf blight
+- Data contains a total of 119 images, equally distributed among three diseases.
+
+## Bacterial Leaf Blight :
+
+- Cause:
+Caused by the bacterium Xanthomonas oryzae pv. oryzae.
+- Symptoms:
+Water-soaked lesions that elongate and turn yellow, leading to wilting and death of the affected leaf tips.
+- Impact:
+Considered a major threat, leading to yield losses. Management involves planting resistant varieties and applying appropriate cultural practices.
+
+## Brown Spot :
+
+- Cause:
+Caused by the fungus Bipolaris oryzae.
+- Symptoms:
+Small, brown spots with a yellow halo on leaves. Lesions may coalesce under favorable conditions.
+- Impact:
+While it may not cause severe yield losses, it can reduce grain quality. Disease management involves planting resistant varieties and using fungicides if necessary.
+
+## Leaf Smut :
+
+- Cause:
+Pathogen: Ustilaginoidea virens, a fungal pathogen.
+- Symptoms:
+    - Early Stage: Initial symptoms include small, whitish to greenish lesions on rice leaf blades.
+    - Later Stage: Lesions progress to form characteristic false smut balls or spore masses. These masses are initially green and can later turn shades of olive, brown, or black.
+    - Spore Masses: The spore masses replace infected grains and give affected panicles the appearance of a cluster of smutted grains.
+- Impact:
+Yield Loss: Leaf smut can result in significant yield losses if not managed.
+Grain Quality: The disease can impact grain quality, affecting the economic value of the rice crop.
+
+## Model Comparison
+- Main CNN model provides an accuracy of 66%
+- Learning of 0.001 provide 70% accuracy and it deterioates when the learning rate increases
+- Data Augmentation provides an accuracy of 83%
+- MLP was unable to identify all the disease classifications
+- Random Search is also able to identify only one class
+
+- In conclusion CNN with Data Augmentation provides the best possible result.
+
+
+## Challenges Faced
+- The dataset is limited,train and testing is limited as well
+- Limited knowledge on Deep Learning algorithms to implement on Image processing
+- Image shape,array and convertion error was hard to understand and it took a certain amount of time to understand the code and implement the data
+- When compiling the model,the optimizer,loss and metrics has to be fixed when changed there is an error in the output
+- loss = sparse_categorical_crossentropy, when just categorical_crossentropy is used there is an error in output and disrupts the flow process as our labels are class encoded
+- In hyperparameter tuning,MLP and RandomSearch can only identify one class,when the input are changed the class identification varies but still only one class
+- With limited dataset various models and hyperparameters were not able to be implemented as testing and validation data is required more..
